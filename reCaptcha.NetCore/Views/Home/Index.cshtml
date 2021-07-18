@@ -1,8 +1,21 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <!--recaptcha-->
+    <div class="clearfix">
+        <div class="g-recaptcha" data-sitekey="site-key"></div>
+    </div>
+    <div style="">
+        <h6 style="color: red"> @TempData["Message"]</h6>
+    </div>
+    <div class="quform-submit">
+        <div class="quform-submit-inner">
+            <button type="submit"
+                    class="submit-button">
+                Gönder
+            </button>
+        </div>
+        <div class="quform-loading-wrap">
+            <span class="quform-loading"></span>
+        </div>
+    </div>
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
